@@ -4,13 +4,13 @@ import {
   PublicKey,
   SignatureResultCallback,
 } from "@solana/web3.js";
-import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
 import {
   confirmTransactionFromBackend,
   confirmTransactionFromFrontend,
 } from "./shift.ts";
 
 import { Cluster } from "@solana/web3.js";
+import { BackpackWalletAdapter } from "@solana/wallet-adapter-wallets";
 
 export async function connectTheWallet() {
   // @ts-ignore
@@ -21,7 +21,7 @@ export async function connectTheWallet() {
   }
   try {
     const network = "mainnet-beta";
-    const phantom = new PhantomWalletAdapter();
+    const phantom = new BackpackWalletAdapter();
     //await phantom.disconnect();
     await phantom.connect();
     const rpcUrl = clusterApiUrl(network);
@@ -54,7 +54,7 @@ export async function signAndConfirmTransaction(
   callback: SignatureResultCallback,
   prvKey: any
 ) {
-  const phantom = new PhantomWalletAdapter();
+  const phantom = new BackpackWalletAdapter();
   await phantom.connect();
   const rpcUrl = clusterApiUrl(network);
   const connection = new Connection(rpcUrl, "confirmed");
@@ -69,7 +69,7 @@ export async function signAndConfirmTransactionFe(
   transaction: any,
   callback: SignatureResultCallback
 ) {
-  const phantom = new PhantomWalletAdapter();
+  const phantom = new BackpackWalletAdapter();
   await phantom.connect();
   const rpcUrl = clusterApiUrl(network);
   const connection = new Connection(rpcUrl, "confirmed");
