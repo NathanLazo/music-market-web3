@@ -107,7 +107,7 @@ const UploadSongForm = () => {
   //starts handle submit function
   const onSubmit: SubmitHandler<Product> = async (data) => {
     toast.loading("Wait for transaction confirmation...", {
-      duration: 6000,
+      duration: 10000,
     });
     const song = await uploadSong(data.song[0] as File);
     if (!song)
@@ -187,6 +187,7 @@ const UploadSongForm = () => {
                   hash: res_trac,
                 };
               }
+              toast.success("Canción creada con éxito");
             }
           )
           .catch((err: Error) => {

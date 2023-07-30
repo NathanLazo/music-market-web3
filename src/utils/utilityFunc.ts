@@ -20,7 +20,7 @@ export async function connectTheWallet() {
     alert("Please Install Phantom");
   }
   try {
-    const network = "devnet";
+    const network = "mainnet-beta";
     const phantom = new PhantomWalletAdapter();
     //await phantom.disconnect();
     await phantom.connect();

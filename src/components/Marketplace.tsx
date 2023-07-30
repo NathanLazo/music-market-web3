@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const Marketplace = ({}) => {
   const [nfts, setNfts] = useState<any>([]);
-  console.log("🚀 ~ file: Marketplace.tsx:7 ~ Marketplace ~ nfts:", nfts);
 
   useEffect(() => {
     const getMarkets = async () => {
@@ -25,7 +24,7 @@ const Marketplace = ({}) => {
       const markets = data.result;
 
       const response = await fetch(
-        `https://api.shyft.to/sol/v1/marketplace/active_listings?network=mainnet-beta&marketplace_address=${markets[0].address.toString()}`,
+        `https://api.shyft.to/sol/v1/marketplace/active_listings?network=mainnet-beta&marketplace_address=${markets[0]?.address.toString()}`,
         {
           method: "GET",
           headers: myHeaders,
