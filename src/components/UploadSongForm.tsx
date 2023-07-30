@@ -138,7 +138,7 @@ const UploadSongForm = () => {
           value: image,
         },
       ];
-      formData.append("network", "mainnet-beta");
+      formData.append("network", "devnet");
       formData.append("wallet", publicKey as string);
       formData.append("name", data.title);
       formData.append("symbol", "XMNFTS");
@@ -177,7 +177,7 @@ const UploadSongForm = () => {
               if (res.data.success === true) {
                 const transaction = res.data.result.encoded_transaction;
                 const res_trac = await signAndConfirmTransactionFe(
-                  "mainnet-beta",
+                  "devnet",
                   transaction,
                   () => {
                     resolve("done");

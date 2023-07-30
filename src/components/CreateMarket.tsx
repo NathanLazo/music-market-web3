@@ -42,7 +42,7 @@ const UploadSongForm = () => {
       myHeaders.append("Content-Type", "application/json");
 
       const raw = JSON.stringify({
-        network: "mainnet-beta",
+        network: "devnet",
         transaction_fee: 10,
         fee_payer: publicKey,
         fee_recipient: publicKey,
@@ -62,7 +62,7 @@ const UploadSongForm = () => {
       if (resJson.success === true) {
         const transaction = resJson.result.encoded_transaction;
         const res_trac = await signAndConfirmTransactionFe(
-          "mainnet-beta",
+          "devnet",
           transaction,
           () => {
             toast.success("Album creado con éxito");
