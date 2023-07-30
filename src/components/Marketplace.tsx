@@ -12,7 +12,7 @@ const Marketplace = ({}) => {
       myHeaders.append("x-api-key", "yuNXtSyS8hhVTdkn");
 
       const res = await fetch(
-        "https://api.shyft.to/sol/v1/marketplace/my_markets?network=devnet",
+        "https://api.shyft.to/sol/v1/marketplace/my_markets?network=mainnet-beta",
         {
           method: "GET",
           headers: myHeaders,
@@ -25,7 +25,7 @@ const Marketplace = ({}) => {
       const markets = data.result;
 
       const response = await fetch(
-        `https://api.shyft.to/sol/v1/marketplace/active_listings?network=devnet&marketplace_address=${markets[0].address.toString()}`,
+        `https://api.shyft.to/sol/v1/marketplace/active_listings?network=mainnet-beta&marketplace_address=${markets[0].address.toString()}`,
         {
           method: "GET",
           headers: myHeaders,
@@ -45,7 +45,7 @@ const Marketplace = ({}) => {
     myHeaders.append("x-api-key", "yuNXtSyS8hhVTdkn");
 
     var raw = JSON.stringify({
-      network: "devnet",
+      network: "mainnet-beta",
       marketplace_address: nft.marketplace_address,
       nft_address: nft.nft_address,
       price: nft.price,

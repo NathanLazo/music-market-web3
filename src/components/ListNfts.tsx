@@ -21,7 +21,7 @@ const ListNfts = ({}) => {
       myHeaders.append("x-api-key", "yuNXtSyS8hhVTdkn");
 
       const nfts = await fetch(
-        `https://api.shyft.to/sol/v1/nft/read_all?network=devnet&address=${publicKey}`,
+        `https://api.shyft.to/sol/v1/nft/read_all?network=mainnet-beta&address=${publicKey}`,
         {
           method: "GET",
           headers: myHeaders,
@@ -33,7 +33,7 @@ const ListNfts = ({}) => {
       setAllNfts(nfts_data.result);
 
       const res = await fetch(
-        `https://api.shyft.to/sol/v1/marketplace/find?network=devnet&creator_address=${publicKey.toString()}&currency_address=So11111111111111111111111111111111111111112&authority_address=${publicKey.toString()}`,
+        `https://api.shyft.to/sol/v1/marketplace/find?network=mainnet-beta&creator_address=${publicKey.toString()}&currency_address=So11111111111111111111111111111111111111112&authority_address=${publicKey.toString()}`,
         {
           method: "GET",
           headers: myHeaders,
@@ -53,7 +53,7 @@ const ListNfts = ({}) => {
 
     if (!album.address) return toast.error("Please create album first");
     var raw = JSON.stringify({
-      network: "devnet",
+      network: "mainnet-beta",
       marketplace_address: album.address as string,
       nft_address: address as string,
       price: 0.001,
@@ -71,7 +71,7 @@ const ListNfts = ({}) => {
         if (result.success === true) {
           const transaction = result.result.encoded_transaction;
           const res_trac = await signAndConfirmTransactionFe(
-            "devnet",
+            "mainnet-beta",
             transaction,
             () => {
               console.log("Transaction sent");

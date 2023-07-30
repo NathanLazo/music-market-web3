@@ -1,7 +1,6 @@
 # Proyecto xNFT Music - Readme
 
 ![xNFT Music Logo](https://cdn-icons-png.flaticon.com/512/9973/9973495.png)
-_(Replace with your project's logo)_
 
 ## Descripción
 
