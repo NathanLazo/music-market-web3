@@ -106,10 +106,9 @@ const UploadSongForm = () => {
 
   //starts handle submit function
   const onSubmit: SubmitHandler<Product> = async (data) => {
-    console.log(
-      "🚀 ~ file: UploadSongForm.tsx:97 ~ constonSubmit:SubmitHandler<Product>= ~ data:",
-      data
-    );
+    toast.loading("Wait for transaction confirmation...", {
+      duration: 6000,
+    });
     const song = await uploadSong(data.song[0] as File);
     if (!song)
       return toast.error("Error al subir la canción, inténtelo mas tarde");
