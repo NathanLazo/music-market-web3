@@ -90,7 +90,7 @@ const ListNfts = ({}) => {
       <div className=' m-8'>
         <p className='mt-1 text-sm leading-6 text-zinc-900'>
           If you dont have an album yet, you can create one{" "}
-          <Link href='/create' className='font-bold  hover:text-zinc-700'>
+          <Link href='/upload' className='font-bold  hover:text-zinc-700'>
             here.{" "}
           </Link>
         </p>
@@ -145,12 +145,7 @@ const ListNfts = ({}) => {
           ))
         ) : (
           <>
-            <div>
-              You dont have nfts yet create one in the /upload page or click{" "}
-              <Link href='/upload' className='font-bold   hover:text-zinc-700'>
-                here
-              </Link>
-            </div>
+            <div></div>
           </>
         )}
       </div>

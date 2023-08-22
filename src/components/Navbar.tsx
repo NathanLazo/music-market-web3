@@ -16,6 +16,12 @@ import Logo from "~/assets/logo.png";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "List", href: "/list", current: false },
+  {
+    name: "xNFT",
+    href: "https://www.xnft.gg/app/6ogcRWAffccJEhEVHyXAfrbGZyCtFuMRSps6rEX6xaJZ",
+    current: false,
+  },
+  { name: "Docs", href: "https://github.com/Saoko1x/xMNFTS", current: false },
 ];
 
 // Default styles that can be overridden by your app
